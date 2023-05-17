@@ -30,3 +30,6 @@ Route::middleware([
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('empleados', App\Http\Controllers\EmpleadoController::class);
+Route::resource('departamentos', App\Http\Controllers\DepartamentoController::class);
+Route::resource('asignaciones', App\Http\Controllers\AsignacioneController::class);

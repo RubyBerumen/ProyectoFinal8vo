@@ -49,6 +49,16 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('empleados.index') }}">Empleados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('departamentos.index') }}">Departamentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('asignaciones.index') }}">Asignaciones</a>
+                        </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
