@@ -13,9 +13,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property $fechaNac
  * @property $genero
  * @property $telefono
+ * @property $departamento_id
  * @property $created_at
  * @property $updated_at
  *
+ * @property Departamento $departamento
  * @property Asignacione[] $asignaciones
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -29,6 +31,7 @@ class Empleado extends Model
 		'fechaNac' => 'required',
 		'genero' => 'required',
 		'telefono' => 'required',
+    'departamento_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -38,7 +41,7 @@ class Empleado extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','apellido','fechaNac','genero','telefono'];
+    protected $fillable = ['nombre','apellido','fechaNac','genero','telefono','departamento_id'];
 
 
     /**
@@ -47,6 +50,14 @@ class Empleado extends Model
     public function asignaciones()
     {
         return $this->hasMany('App\Asignacione', 'empleado_id', 'id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function departamento()
+    {
+        return $this->hasOne('App\Departamento', 'id', 'departamento_id');
     }
     
 

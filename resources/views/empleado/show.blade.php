@@ -40,6 +40,10 @@
                             <strong>Telefono:</strong>
                             {{ $empleado->telefono }}
                         </div>
+                        <div class="form-group">
+                            <strong>Departamento Id:</strong>
+                            {{ $empleado->departamento_id }}
+                        </div>
 
                     </div>
                 </div>

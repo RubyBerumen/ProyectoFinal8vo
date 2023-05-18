@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleado;
+use App\Departamento;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class EmpleadoController extends Controller
     public function create()
     {
         $empleado = new Empleado();
-        return view('empleado.create', compact('empleado'));
+        $departamentos = Departamento::pluck('nombre','id');
+        return view('empleado.create', compact('empleado','departamentos'));
     }
 
     /**

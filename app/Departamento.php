@@ -43,5 +43,12 @@ class Departamento extends Model
         return $this->hasMany('App\Asignacione', 'departamento_id', 'id');
     }
     
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function empleados()
+    {
+        return $this->hasMany('App\Empleado', 'empleado_id', 'id');
+    }
 
 }

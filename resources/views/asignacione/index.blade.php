@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Asignacione') }}
+                                {{ __('Asignaciones') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('asignaciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('+ Agregar asignación') }}
                                 </a>
                               </div>
                         </div>
@@ -34,11 +34,11 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>Id</th>
                                         
-										<th>Descripcion</th>
-										<th>Empleado Id</th>
-										<th>Departamento Id</th>
+										<th>Descripción</th>
+										<th>Empleado</th>
+										<th>Departamento</th>
 										<th>Fecha</th>
 
                                         <th></th>
@@ -50,17 +50,17 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $asignacione->descripcion }}</td>
-											<td>{{ $asignacione->empleado_id }}</td>
-											<td>{{ $asignacione->departamento_id }}</td>
+											<td>{{ $asignacione->empleado->nombre }}</td>
+											<td>{{ $asignacione->departamento->nombre }}</td>
 											<td>{{ $asignacione->fecha }}</td>
 
                                             <td>
                                                 <form action="{{ route('asignaciones.destroy',$asignacione->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('asignaciones.show',$asignacione->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('asignaciones.edit',$asignacione->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('asignaciones.show',$asignacione->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('asignaciones.edit',$asignacione->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
