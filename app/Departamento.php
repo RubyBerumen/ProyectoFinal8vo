@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Asignacione[] $asignaciones
+ * @property Empleado[] $empleados
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -48,7 +49,8 @@ class Departamento extends Model
      */
     public function empleados()
     {
-        return $this->hasMany('App\Empleado', 'empleado_id', 'id');
+        return $this->hasMany('App\Empleado', 'departamento_id', 'id');
     }
+    
 
 }

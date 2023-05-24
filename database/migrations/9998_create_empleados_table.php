@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('fechaNac');
             $table->string('genero');
             $table->string('telefono');
+            $table->unsignedBigInteger('departamento_id');
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade');
             $table->timestamps();
         });
     }

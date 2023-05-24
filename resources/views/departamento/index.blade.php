@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Departamentos') }}
+                                {{ __('Departamento') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('departamentos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __(' + Agregar departamento') }}
+                                  {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -34,10 +34,10 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>Id</th>
+                                        <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Descripción</th>
+										<th>Descripcion</th>
 
                                         <th></th>
                                     </tr>
@@ -52,11 +52,11 @@
 
                                             <td>
                                                 <form action="{{ route('departamentos.destroy',$departamento->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('departamentos.show',$departamento->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('departamentos.edit',$departamento->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('departamentos.show',$departamento->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('departamentos.edit',$departamento->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

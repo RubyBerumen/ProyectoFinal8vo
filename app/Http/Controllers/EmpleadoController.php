@@ -33,7 +33,7 @@ class EmpleadoController extends Controller
     public function create()
     {
         $empleado = new Empleado();
-        $departamentos = Departamento::pluck('nombre','id');
+        $departamentos = departamento::pluck('nombre','id');
         return view('empleado.create', compact('empleado','departamentos'));
     }
 
@@ -75,8 +75,8 @@ class EmpleadoController extends Controller
     public function edit($id)
     {
         $empleado = Empleado::find($id);
-
-        return view('empleado.edit', compact('empleado'));
+        $departamentos = departamento::pluck('nombre','id');
+        return view('empleado.edit', compact('empleado', 'departamentos'));
     }
 
     /**

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Asignacione;
-use App\Empleado;
-use App\Departamento;
 use Illuminate\Http\Request;
 
 /**
@@ -34,9 +32,7 @@ class AsignacioneController extends Controller
     public function create()
     {
         $asignacione = new Asignacione();
-        $empleados = Empleado::pluck('nombre','id');
-        $departamentos = Departamento::pluck('nombre','id');
-        return view('asignacione.create', compact('asignacione','empleados','departamentos'));
+        return view('asignacione.create', compact('asignacione'));
     }
 
     /**

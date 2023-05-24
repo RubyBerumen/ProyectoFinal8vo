@@ -8,12 +8,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('empleado_id') }}
-            {{ Form::select('empleado_id', $empleados, $asignacione->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {{ Form::text('empleado_id', $asignacione->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
             {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('departamento_id') }}
-            {{ Form::select('departamento_id', $departamentos, $asignacione->departamento_id, ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
+            {{ Form::text('departamento_id', $asignacione->departamento_id, ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
             {!! $errors->first('departamento_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

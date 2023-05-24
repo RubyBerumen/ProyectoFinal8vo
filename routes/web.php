@@ -25,11 +25,15 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('empleados', App\Http\Controllers\EmpleadoController::class);
+    Route::resource('departamentos', App\Http\Controllers\DepartamentoController::class);
+    Route::resource('asignaciones', App\Http\Controllers\AsignacioneController::class);
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('empleados', App\Http\Controllers\EmpleadoController::class);
-Route::resource('departamentos', App\Http\Controllers\DepartamentoController::class);
-Route::resource('asignaciones', App\Http\Controllers\AsignacioneController::class);
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');

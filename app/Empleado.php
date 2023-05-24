@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
- * @property Departamento $departamento
  * @property Asignacione[] $asignaciones
+ * @property Departamento $departamento
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -31,7 +31,7 @@ class Empleado extends Model
 		'fechaNac' => 'required',
 		'genero' => 'required',
 		'telefono' => 'required',
-    'departamento_id' => 'required',
+		'departamento_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -51,7 +51,7 @@ class Empleado extends Model
     {
         return $this->hasMany('App\Asignacione', 'empleado_id', 'id');
     }
-
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
