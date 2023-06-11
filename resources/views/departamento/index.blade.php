@@ -1,10 +1,11 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('template_title')
     Departamento
 @endsection
 
 @section('content')
+<br>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -18,7 +19,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('departamentos.create') }}" class="btn btn-primary btn-md float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <i class="fa fa-fw fa-plus"></i> {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -31,7 +32,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover" id="abc">
+                            <table class="table table-responsive-sm table-hover" id="abc">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
@@ -71,7 +72,10 @@
         </div>
     </div>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+@endsection
+
+@section('js')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
@@ -81,6 +85,4 @@
     $('#abc').DataTable();
   });
 </script>
-
-
-@endsection
+@stop

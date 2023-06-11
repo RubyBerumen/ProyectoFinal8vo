@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fechaNac') }}
-            {{ Form::text('fechaNac', $empleado->fechaNac, ['class' => 'form-control' . ($errors->has('fechaNac') ? ' is-invalid' : ''), 'placeholder' => 'Fechanac']) }}
+            {{ Form::date('fechaNac', $empleado->fechaNac, ['class' => 'form-control' . ($errors->has('fechaNac') ? ' is-invalid' : ''), 'placeholder' => 'Fechanac']) }}
             {!! $errors->first('fechaNac', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
