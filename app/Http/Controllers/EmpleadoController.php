@@ -32,8 +32,10 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
+        
         $empleado = new Empleado();
         $departamentos = departamento::pluck('nombre','id');
+        
         return view('empleado.create', compact('empleado','departamentos'));
     }
 
@@ -45,12 +47,19 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+    
+
         request()->validate(Empleado::$rules);
 
         $empleado = Empleado::create($request->all());
 
         return redirect()->route('empleados.index')
             ->with('success', 'Empleado created successfully.');
+       
+
+        
+        
+
     }
 
     /**
