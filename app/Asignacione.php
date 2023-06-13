@@ -24,10 +24,10 @@ class Asignacione extends Model
 {
     
     static $rules = [
-		'descripcion' => 'required',
-		'empleado_id' => 'required',
-		'departamento_id' => 'required',
-		'fecha' => 'required',
+		'descripcion' => 'required|string|regex:/^[\pL\s\-]+$/u|max:100',
+		'empleado_id' => 'required|exists:empleados,id',
+		'departamento_id' => 'required|exists:departamentos,id',
+		'fecha' => 'required|date',
     ];
 
     protected $perPage = 20;

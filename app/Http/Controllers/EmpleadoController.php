@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Empleado;
 use App\Departamento;
+use App\Http\Controllers\Requests\EmpleadoRequest;
 use Illuminate\Http\Request;
 
 /**
@@ -47,7 +48,6 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-    
 
         request()->validate(Empleado::$rules);
 
@@ -56,9 +56,6 @@ class EmpleadoController extends Controller
         return redirect()->route('empleados.index')
             ->with('success', 'Empleado created successfully.');
        
-
-        
-        
 
     }
 

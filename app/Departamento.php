@@ -22,8 +22,8 @@ class Departamento extends Model
 {
     
     static $rules = [
-		'nombre' => 'required',
-		'descripcion' => 'required',
+		'nombre' => 'required|string|regex:/^[\pL\s\-]+$/u|max:30',
+		'descripcion' => 'required|string|regex:/^[\pL\s\-]+$/u|max:100',
     ];
 
     protected $perPage = 20;

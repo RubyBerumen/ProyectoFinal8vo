@@ -26,12 +26,12 @@ class Empleado extends Model
 {
     
     static $rules = [
-		'nombre' => 'required',
-		'apellido' => 'required',
-		'fechaNac' => 'required',
-		'genero' => 'required',
-		'telefono' => 'required',
-		'departamento_id' => 'required',
+        'nombre' => 'required|string|regex:/^[\pL\s\-]+$/u|max:20',
+        'apellido' => 'required|string|regex:/^[\pL\s\-]+$/u|max:20',
+        'fechaNac' => 'required|date',
+        'genero' => 'required',
+        'telefono' => 'required|numeric|digits:10',
+        'departamento_id' => 'required|exists:departamentos,id',
     ];
 
     protected $perPage = 20;
