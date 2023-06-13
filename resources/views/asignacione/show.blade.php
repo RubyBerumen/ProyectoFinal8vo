@@ -12,17 +12,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Asignacione</span>
+                            <span class="card-title">{{ __('Mostrar') }} Asignación</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('asignaciones.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('asignaciones.index') }}"> {{ __('Regresar') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Descripcion:</strong>
+                            <strong>Descripción:</strong>
                             {{ $asignacione->descripcion }}
                         </div>
                         <div class="form-group">

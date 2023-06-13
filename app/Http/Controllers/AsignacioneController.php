@@ -52,7 +52,7 @@ class AsignacioneController extends Controller
         $asignacione = Asignacione::create($request->all());
 
         return redirect()->route('asignaciones.index')
-            ->with('success', 'Asignacione created successfully.');
+            ->with('success', 'Asignación creada existosamente.');
     }
 
     /**
@@ -96,7 +96,7 @@ class AsignacioneController extends Controller
         $asignacione->update($request->all());
 
         return redirect()->route('asignaciones.index')
-            ->with('success', 'Asignacione updated successfully');
+            ->with('success', 'Asignación actualizada exitosamente.');
     }
 
     /**
@@ -109,6 +109,6 @@ class AsignacioneController extends Controller
         $asignacione = Asignacione::find($id)->delete();
 
         return redirect()->route('asignaciones.index')
-            ->with('success', 'Asignacione deleted successfully');
+            ->with('success', 'Asignación eliminada exitosamente.');
     }
 }
