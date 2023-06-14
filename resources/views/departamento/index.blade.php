@@ -19,7 +19,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('departamentos.create') }}" class="btn btn-primary btn-md float-right"  data-placement="left">
-                                <i class="fa fa-fw fa-plus"></i> {{ __('Create New') }}
+                                <i class="fa fa-fw fa-plus"></i> {{ __('Crear nuevo departamento') }}
                                 </a>
                               </div>
                         </div>
@@ -38,7 +38,7 @@
                                         <th>No</th>
                                         
 										<th>Nombre</th>
-										<th>Descripcion</th>
+										<th>Descripción</th>
 
                                         <th></th>
                                     </tr>
@@ -53,11 +53,11 @@
 
                                             <td>
                                                 <form action="{{ route('departamentos.destroy',$departamento->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('departamentos.show',$departamento->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('departamentos.edit',$departamento->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('departamentos.show',$departamento->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('departamentos.edit',$departamento->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
